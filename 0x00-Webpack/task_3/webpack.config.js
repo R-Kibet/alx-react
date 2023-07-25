@@ -6,11 +6,11 @@ module.exports = {
   mode: 'development',
 
   entry: {
-    bundle: ["./modules/header/header.js", "./modules/body/body.js", "./modules/footer/footer.js"]
+    bun: ["./modules/header/header.js", "./modules/body/body.js", "./modules/footer/footer.js"]
   },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: '[].bundle.js',
+    filename: '[name].bundle.js',
   },
   performance: {
     hints: false,
