@@ -12,9 +12,9 @@ export default function App() {
 
       <main className='App-body' role="main">
         <p>Login to access the full dashboard</p>
-        <label for='email'>Email</label>
+        <label for='email'>Email:</label>
         <input type='email' id='email' name="email"></input>
-        <label for='pwd'>Password</label>
+        <label for='pwd'>Password:</label>
         <input type='password' id='pwd' name='pwd'></input>
         <button type='button'>OK</button>
       </main>
