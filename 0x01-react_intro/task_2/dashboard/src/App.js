@@ -20,7 +20,7 @@ export default function App() {
       </main>
 
       <footer className='App-footer'>
-        <p>Copyright {getFullYear} - {getFooterCopy(true)} </p>
+        <p>Copyright {getFullYear()} - {getFooterCopy(true)} </p>
       </footer>
     </>
   )

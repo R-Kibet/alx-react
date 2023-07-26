@@ -1,6 +1,6 @@
 export  function getFullYear() {
     var year = new Date().getFullYear();
-    return (year)
+    return year
 }
 
 export function getFooterCopy(isIndex) {
