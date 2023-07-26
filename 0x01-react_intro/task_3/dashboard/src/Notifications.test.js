@@ -1,13 +1,13 @@
 import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 
-const wraper = shallow (<Notifications/>);
+const wraper = shallow (<Notifications />);
 
 it('renders without crashing', () => {
-    shallow(<Notifications/>);
+    shallow(<Notifications />);
 });
 
-it('renders three list elements', () {
+it('renders three list elements', () => {
     expect(wraper.find('li').children().length).toEqual(3);
 });
 
