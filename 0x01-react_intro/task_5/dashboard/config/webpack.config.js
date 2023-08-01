@@ -1,21 +1,24 @@
 const path = require('path')
 
+
 module.exports = {
     mode: 'development',
-    entry:{ 
-        bundle:path.resolve(__dirname, 'src/index.js')
-    },
+    entry: path.resolve(__dirname, 'index.js'),
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "[name].js"
+        path: path.resolve(__dirname, 'dist'),
+        filename: "bundle.js"
     },
     devtool: 'inline-source-map',
 
     devServer: {
         hot: true,
-        contentBase: path.resolve('./dist'),
+        static: path.resolve(__dirname, 'dist'),
         compress: true,
-        port: 3000,
+        open: true,
+        port:  8564,
+    },
+    resolve: {
+      extensions: [ ".js", ".jsx"],
     },
     module: {
         rules: [
@@ -27,7 +30,7 @@ module.exports = {
             ]
           },
           {
-            test: /\.(png|jpe?g|gif)$/i,
+            test: /\.(jpg|png)$/i,
             use: [
               'file-loader',
               {
@@ -39,7 +42,15 @@ module.exports = {
               },
             ],
           },
-        ]
+          {
+            test: /\.jsx?$/i,
+            include: path.resolve(__dirname, 'src'),
+            exclude:/node_modules/,
+            use: {
+              loader: 'babel-loader',
+            },
+          },
+        ],
     }
 
 }
