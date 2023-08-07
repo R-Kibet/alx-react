@@ -5,6 +5,8 @@ import Notifications from '../Notifications/Notifications';
 import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import PropTypes from 'prop-types';
+import BodySection from '../BodySection/BodySection.js';
+import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom.js';
 import { getLatestNotification } from '../utils/utils';
 
 
@@ -50,11 +52,21 @@ class App extends React.Component{
     return (
       <>
       <Notifications listNotifications={this.listNotifications} />
-      <div className='App'>
         <Header />
-        {isLoggedIn ? <CourseList  listCourses={this.listCourses }/> :  <Login />}
+        
+        {isLoggedIn ? (
+          <BodySectionWithMarginBottom title='Course list'>
+            <CourseList listCourses={this.listCourses} />
+          </BodySectionWithMarginBottom>
+        ) : (
+          <BodySectionWithMarginBottom title='Log in to continue'>
+            <Login />
+          </BodySectionWithMarginBottom>
+        )}
+        <BodySection title='News from the School'>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </BodySection>
         <Footer />
-      </div>
      
       </>
     );
