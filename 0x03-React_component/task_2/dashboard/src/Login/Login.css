@@ -1,0 +1,18 @@
+.App-body {
+  margin-left: 50px;
+  padding-top: 3rem;
+  font-size: 20px;
+
+}
+
+.App-body label {
+  padding: 15px;
+  font-weight: 500;
+}
+
+.App-body button {
+  margin-left: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+  

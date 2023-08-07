@@ -1,0 +1,23 @@
+.Notifications {
+    border: 4px;
+    padding: 10px;
+    margin-left: 20px ;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    border-style: dashed;
+    border-color: red;
+    top: 10px;
+    
+
+}
+.Notifications p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 580;
+}
+
+.Notifications ul li {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+}
