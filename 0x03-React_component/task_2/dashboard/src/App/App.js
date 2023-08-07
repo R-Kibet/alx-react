@@ -28,10 +28,10 @@ class App extends React.Component{
   ];
 
   handleKeyboardPress = (e) => {
-    const { logout } = this.props;
+    const { logOut } = this.props;
     if (e.ctrlKey && e.key == 'h') {
       alert('Logging you out');
-      logout();
+      logOut();
     }
   }
 
@@ -63,12 +63,12 @@ class App extends React.Component{
 
 App.defaultProps = {
   isLoggedIn: true,
-  logout: () => {}
+  logOut: () => {}
 };
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
-  logout: PropTypes.func
+  logOut: PropTypes.func
 };
 
 export default App;
