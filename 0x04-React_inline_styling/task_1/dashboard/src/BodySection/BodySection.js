@@ -23,6 +23,10 @@ BodySection.defaultProps = {
   title: '',
 }
 
+BodySection.prototypes = {
+    title: PropTypes.string,
+}
+
 const styles = StyleSheet.create ({
 
     bodySection: {
