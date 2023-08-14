@@ -13,7 +13,7 @@ import { StyleSheet, css } from 'aphrodite';
 class App extends React.Component{
   constructor(props) {
     super(props);
-    this.styles = { displayDrawer: false }
+    this.state = { displayDrawer: false }
 
     this.handleKeyboardPress = this.handleKeyboardPress.bind(this);
     this,handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
