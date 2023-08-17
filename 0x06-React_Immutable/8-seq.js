@@ -9,6 +9,5 @@ export default function printBestStudents(obj) {
       lastName: std.lastName.charAt(0).toUpperCase() + std.lastName.slice(1),
     }))
     .toObject();
-
   console.log(student);
 }
