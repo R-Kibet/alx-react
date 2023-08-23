@@ -4,7 +4,7 @@ import { login, logout, displayNotificationDrawer, hideNotificationDrawer } from
   
 describe("action creators tests", function () {
     it("returns correct action for login", function () {
-      const user = { email: "larry@gmail.com", password: 123456789 };
+      const user = { email: "abc@gmail.com", password: 123456789 };
   
       const expectedReturn = { type: LOGIN, user };
   
