@@ -13,11 +13,6 @@ import { user, logOut } from "./AppContext";
 import AppContext from "./AppContext";
 import { connect } from "react-redux";
 
-const mapStateToProps = state => {
-  return {
-    isLoggedIn: state.get('isUserLoggedIn')
-  }
-}
 
 const listCourses = [
   { id: 1, name: "ES6", credit: 60 },
@@ -151,6 +146,12 @@ class App extends Component {
         </div>
       </AppContext.Provider>
     );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.get('isUserLoggedIn')
   }
 }
 
