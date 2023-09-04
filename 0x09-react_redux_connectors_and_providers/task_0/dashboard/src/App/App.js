@@ -149,7 +149,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     isLoggedIn: state.get('isUserLoggedIn')
   }
