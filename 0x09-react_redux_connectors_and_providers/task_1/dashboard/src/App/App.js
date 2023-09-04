@@ -12,8 +12,10 @@ import { StyleSheet, css } from "aphrodite";
 import { user, logOut } from "./AppContext";
 import AppContext from "./AppContext";
 import { connect } from "react-redux";
-import { displayNotificationDrawer, hideNotificationDrawer } from "../actions/uiActionCreators"
-
+import {
+  displayNotificationDrawer,
+  hideNotificationDrawer,
+} from "../actions/uiActionCreators";
 
 const listCourses = [
   { id: 1, name: "ES6", credit: 60 },
@@ -81,18 +83,14 @@ class App extends Component {
   }
 
   render() {
-    const {
-      user,
-      logOut,
-      listNotifications,
-    } = this.state;
+    const { user, logOut, listNotifications } = this.state;
 
     const {
       isLoggedIn,
       displayDrawer,
       displayNotificationDrawer,
-      hideNotificationDrawer
-    } = this.props
+      hideNotificationDrawer,
+    } = this.props;
 
     const value = { user, logOut };
 
@@ -145,13 +143,17 @@ class App extends Component {
 }
 
 /* SUBSCRIBING */
-export const mapStateToProps = state => {
+export const mapStateToProps = (state) => {
   return {
-    isLoggedIn: state.get('isUserLoggedIn'),
-    displayDrawer: state.get('isNotificationDrawerVisible')
-  }
-}
+    isLoggedIn: state.get("isUserLoggedIn"),
+    displayDrawer: state.get("isNotificationDrawerVisible"),
+  };
+};
 
+const mapDispatchToProps = {
+  displayNotificationDrawer,
+  hideNotificationDrawer,
+};
 
 /* STYLING */
 
@@ -199,4 +201,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
