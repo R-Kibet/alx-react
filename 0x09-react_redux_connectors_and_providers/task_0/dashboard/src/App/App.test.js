@@ -3,7 +3,7 @@ import React from "react";
 import App, { listNotificationsInitialState, mapStateToProps } from "./App";
 import { StyleSheetTestUtils } from "aphrodite";
 import AppContext, { user, logOut } from "./AppContext";
-import '
+import { fromJS } from "immutable";
 
 describe("<App />", () => {
   beforeAll(() => {
