@@ -155,12 +155,22 @@ const mapDispatchToProps = {
   hideNotificationDrawer,
 };
 
+/* define propTypes and defaultProps */
+App.defaultProps = {
+  isLoggedIn: false,
+  displayDrawer: false,
+  displayNotificationDrawer: () => {},
+  hideNotificationDrawer: () => {},
+};
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool,
+  displayDrawer: PropTypes.bool,
+  displayNotificationDrawer: PropTypes.func,
+  hideNotificationDrawer: PropTypes.func,
+};
+
 /* STYLING */
-
-App.defaultProps = {};
-
-App.propTypes = {};
-
 const cssVars = {
   mainColor: "#e01d3f",
 };
