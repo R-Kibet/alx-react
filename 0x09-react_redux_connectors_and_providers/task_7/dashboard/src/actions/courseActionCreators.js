@@ -1,0 +1,29 @@
+import { SELECT_COURSE, UNSELECT_COURSE } from "./courseActionTypes";
+
+export const selectCourse = (index) => {
+  return {
+    type: SELECT_COURSE,
+    index,
+  };
+};
+
+export const boundSelectCourse = (index) => dispatch(selectCourse(index));
+
+export const unSelectCourse = (index) => {
+  return {
+    type: UNSELECT_COURSE,
+    index,
+  };
+};
+
+export const fetchCourses = () => {
+  return async (dispatch) => {
+    try {
+      const res = await fetch("../../dist/courses.json");
+      const data = await res.json();
+      return dispatch(setCourses(data));
+    } catch (error) {}
+  };
+};
+
+export const boundUnSelectCourse = (index) => dispatch(unSelectCourse(index));
