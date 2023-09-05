@@ -219,6 +219,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => {
+  //implementing selector
   const unread = getUnreadNotifications(state)
   return {
     listNotifications: unread,
