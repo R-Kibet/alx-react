@@ -37,12 +37,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleKeyCombination = this.handleKeyCombination.bind(this);
-    this.logIn = this.logIn.bind(this);
-    this.logOut = this.logOut.bind(this);
     this.markNotificationAsRead = this.markNotificationAsRead.bind(this);
     this.state = {
       user,
-      logOut: this.logOut,
       listNotifications: listNotificationsInitialState,
     };
   }
@@ -50,7 +47,7 @@ class App extends Component {
   handleKeyCombination(e) {
     if (e.key === "h" && e.ctrlKey) {
       alert("Logging you out");
-      this.state.logOut();
+      this.props.logout();
     }
   }
 
@@ -79,10 +76,10 @@ class App extends Component {
       displayNotificationDrawer,
       hideNotificationDrawer,
       login,
-      logOut,
+      logout,
     } = this.props;
 
-    const value = { user, logOut };
+    const value = { user, logout };
 
     return (
       <AppContext.Provider value={value}>
@@ -132,21 +129,6 @@ class App extends Component {
   }
 }
 
-/* SUBSCRIBING */
-export const mapStateToProps = (state) => {
-  return {
-    isLoggedIn: state.get("isUserLoggedIn"),
-    displayDrawer: state.get("isNotificationDrawerVisible"),
-  };
-};
-
-const mapDispatchToProps = {
-  displayNotificationDrawer,
-  hideNotificationDrawer,
-  login: loginRequest,
-  logOut,
-};
-
 /* define propTypes and defaultProps */
 App.defaultProps = {
   isLoggedIn: false,
@@ -162,6 +144,21 @@ App.propTypes = {
   displayNotificationDrawer: PropTypes.func,
   hideNotificationDrawer: PropTypes.func,
   login: PropTypes.func,
+};
+
+/* SUBSCRIBING */
+export const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.get("isUserLoggedIn"),
+    displayDrawer: state.get("isNotificationDrawerVisible"),
+  };
+};
+
+const mapDispatchToProps = {
+  displayNotificationDrawer,
+  hideNotificationDrawer,
+  login: loginRequest,
+  logout,
 };
 
 /* STYLING */
